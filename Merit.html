@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2ee91606d8.js" crossorigin="anonymous"></script>
+    <title>Merit Scholarship</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/Home"> Home </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/About">
+                  About Us
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Contact"> Contact Us </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Apply Here
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/Merit">
+                      Merit Scholarships
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Economical">
+                      Economical Scholarships
+                    </a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Athletic">
+                      Athletic Scholarships
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <a href="/Login"><button class="btn btn-outline-success" type="login">Logout</button></a>
+          </div>
+        </div>
+      </nav>
+      {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show my-0" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+    {% endif %}
+    <div style="background-image: url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9980.jpg?size=626&ext=jpg&ga=GA1.1.2038632464.1686319279&semt=ais');
+    background-repeat: no-repeat; background-size: cover; ">
+      <form method="post"  style="color: whitesmoke;">
+        {% csrf_token %}
+        <h1 style="text-align: center; ">Merit Scholarships</h1>
+            <div class="mb-3 col-lg-8 mx-5">
+              <label for="exampleInputName" class="form-label">Student Name</label>
+              <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Student Name" name="sname">
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputFName" class="form-label">Father's Name</label>
+                <input type="text" class="form-control" id="exampleInputFName" aria-describedby="FnameHelp" placeholder="Enter Father's Name" name="fname">
+            </div>  
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputMName" class="form-label">Mother's Name</label>
+                <input type="text" class="form-control" id="exampleInputMName" aria-describedby="MnameHelp" placeholder="Enter Mother's Name" name="mname">
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter your Email" name="semail">
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputAge" class="form-label">Age</label>
+                <input type="number" class="form-control" id="exampleInputAge" aria-describedby="AgeHelp" placeholder="Enter Your Age" name="age">
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputName" class="form-label">Caste</label>
+                <select class="form-select col-lg-8" aria-label="Default select example" name="caste">
+                <option selected>---Select---</option>
+                <option value="1">OC</option>
+                <option value="2">SC/ST</option>
+                <option value="3">BC-A</option>
+                <option value="4">BC-B</option>
+                <option value="5">BC-D</option>
+                <option value="6">BC-E</option></select>
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputPhone" class="form-label">Phone No</label>
+                <input type="text" class="form-control" id="exampleInputPhone" aria-describedby="PhoneHelp" placeholder="Enter your phone No" name="sphone">
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputSName" class="form-label">School Name</label>
+                <input type="text" class="form-control" id="exampleInputSName" aria-describedby="SnameHelp" placeholder="Enter Your School Name" name="sclname">
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputMarks1" class="form-label">10th Marklist</label>
+                <input type="file" class="form-control" id="exampleInputMarks1" aria-describedby="Marks1Help" name="marks1">
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputCName" class="form-label">College Name</label>
+                <input type="text" class="form-control" id="exampleInputCName" aria-describedby="CnameHelp"placeholder="Enter your College Name" name="clgname">
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputMarks2" class="form-label">1st Year Marks</label>
+                <input type="file" class="form-control" id="exampleInputMarks2" aria-describedby="Marks2Help" name="marks2">
+            </div> 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputMarks3" class="form-label">2nd Year Marks</label>
+                <input type="file" class="form-control" id="exampleInputMarks3" aria-describedby="Marks3Help" name="marks3">
+            </div> 
+            {% comment %} <div class="mb-3 col-lg-8 mx-5">
+              <label for="exampleInputper" class="form-label">Inter Percentage</label>
+              <input type="text" class="form-control" id="exampleInputper" aria-describedby="perHelp"placeholder="Enter your percentage" name="percentage"> </div> {% endcomment %} 
+            <div class="mb-3 col-lg-8 mx-5">
+                <label for="exampleInputMarks4" class="form-label">Eamcet Rank</label>
+                <input type="file" class="form-control" id="exampleInputMarks4" aria-describedby="Marks4Help" name="emrank">
+            </div> 
+            <button type="submit" class="btn btn-success mx-5">Submit</button>
+        </form>
+  </body>
+</html>

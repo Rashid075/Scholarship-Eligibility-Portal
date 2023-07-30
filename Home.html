@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2ee91606d8.js" crossorigin="anonymous"></script>
+    <title>Scholarship Portal</title>
+    <style>
+        .footer{
+            background-color: #24262b;
+            padding: 70px 0;
+        }
+        .footer-col{
+           width: 25%;
+           padding: 0 15px;
+        }
+        .footer-col p{
+            color: white;
+        }
+        .footer-col h4{
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+        .footer-col h4::before{
+            content: '';
+            position: absolute;
+            left:0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+        .footer-col ul li:not(:last-child){
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a{
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover{
+            color: #ffffff;
+            padding-left: 8px;
+        }
+        .footer-col .social-links a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.2);
+            margin:0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+        .footer-col .social-links a:hover{
+            color: #24262b;
+            background-color: #ffffff;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/Home"> Home </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/About">
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Contact"> Contact Us </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Apply Here
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/Merit">
+                    Merit Scholarships
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/Economical">
+                    Economical Scholarships
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/Athletic">
+                    Athletic Scholarships
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a href="/Login"><button class="btn btn-outline-success" type="logout">Logout</button></a>
+        </div>
+      </div>
+    </nav>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show my-0" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+    {% endif %}
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://cdn.pixabay.com/photo/2016/02/06/09/56/science-1182713_1280.jpg" class="d-block w-100" alt="Economical" style="height: 500px">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Merit Scholarships</h5>
+              <p>A merit-based scholarship is an award given to high performing
+                students. It is based entirely on your merit in either academics,
+                sports, leadership activity, community service, artistic, or other
+                special interests rather than your need for financial aid.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2019/05/08/04/46/race-4187747_1280.jpg" class="d-block w-100" alt="Atheltic" style="height: 500px">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Athletic Scholarships</h5>
+              <p>An athletic scholarship is a form of scholarship to attend a
+                college or university or a private high school awarded to an
+                individual based predominantly on their ability to play in a
+                sport.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2022/06/07/21/21/scholarship-7249326_1280.png" class="d-block w-100" alt="Merit" style="height: 500px">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Economical Scholarships</h5>
+              <p>The EWS Scholarship Program is a part of the PM Young Achievers
+                Scholarship Award Program, a scholarship program run by the
+                Central Department of Social Justice and Empowerment.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <section style="display: flex;
+                      background-image: url('https://img.freepik.com/free-vector/dark-blue-memphis-blog-banner-template_53876-98946.jpg?w=1060&t=st=1688205136~exp=1688205736~hmac=5203b0e1a208f200077abc650291522830ca4078d2c409917b257d1351775f21')  ">
+        <div class="card" style="width: 18rem; display: flex;
+        margin-top: 100px; margin-right:150px;
+        margin-left: 200px; margin-bottom: 50px;">
+            <img src="https://img.freepik.com/free-vector/boy-browsing-internet-laptop_1308-118693.jpg?w=740&t=st=1688204866~exp=1688205466~hmac=1b27491da1cb3e8023a54da0d326808b1063ca0dd8c464190fc35220f789fa96" class="card-img-top" alt="This is a Card ">
+            <div class="card-body">
+              <h5 class="card-title">Our Team</h5>
+              <p class="card-text">Teamwork is a visual solution that helps businesses plan, manage, collaborate and accomplish projects of any size. It allows teams to view the full scope of a single project or a portfolio of projects while monitoring individual project components.</p>
+              <a href="#" class="btn btn-success">Our Team</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; display: flex;
+          margin-top: 100px; margin-left: 100px; margin-bottom: 50px;">
+            <img src="https://img.freepik.com/free-vector/business-meeting-isometric-perspective_23-2147642995.jpg?w=740&t=st=1688205023~exp=1688205623~hmac=e5ccc118b4b76e18ec4a3b88ac671edab510b9ac8a3f3683c003ff9c472968dc" class="card-img-top" alt="This is a second card">
+            <div class="card-body">
+              <h5 class="card-title">About Us</h5>
+              <p class="card-text">This is a Scholarship portal where you can apply for any types of scholarships from our portal. If you want to know more about our scholarship poratl then click on learn more button.</p>
+              <a href="/About" class="btn btn-success">Learn More</a>
+            </div>
+          </div>
+      </section>
+      <section style="display: flex;
+       background-image: url('https://img.freepik.com/free-photo/abstract-digital-grid-black-background_53876-97647.jpg?size=626&ext=jpg&ga=GA1.1.2038632464.1686319279&semt=ais') ">
+        <div class="card" style="width: 10rem; margin-top: 120px; margin-left: 70px; margin-bottom: 50px;">
+            <img src="https://img.freepik.com/free-vector/businessman-working-his-desk_23-2147504661.jpg?w=740&t=st=1688207242~exp=1688207842~hmac=d5b3112c209fc5069adbf1cef5ba87fbf856039886188198b48027bea0a2f64a" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Sk.Rashid</p>
+                <i class="fa-brands fa-linkedin fa-xl" style="margin: 5px;"></i>
+                <i class="fa-brands fa-square-instagram fa-xl" style="margin: 5px;"></i> 
+                <i class="fa-brands fa-github fa-xl" style="margin: 5px;"></i>
+            </div>
+          </div>
+          <div class="card" style="width: 10rem; margin-top: 120px; margin-left: 70px; margin-bottom: 50px;">
+            <img src="https://img.freepik.com/free-vector/flat-design-vector-man-programmer-working_23-2148269034.jpg?size=626&ext=jpg&ga=GA1.1.2038632464.1686319279&semt=ais" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">V. Mohith</p>
+              <i class="fa-brands fa-linkedin fa-xl" style="margin: 5px;"></i>
+                <i class="fa-brands fa-square-instagram fa-xl" style="margin: 5px;"></i> 
+                <i class="fa-brands fa-github fa-xl" style="margin: 5px;"></i>
+            </div>
+          </div>
+          <div class="card" style="width: 10rem; margin-top: 120px; margin-left: 70px; margin-bottom: 50px;">
+            <img src="https://img.freepik.com/premium-vector/woman-work-with-computer-from-home-illustration-flat-cute-cartoon-design_115968-21.jpg?size=626&ext=jpg&ga=GA1.2.2038632464.1686319279&semt=ais" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">V. Madhuri</p>
+              <i class="fa-brands fa-linkedin fa-xl" style="margin: 5px;"></i>
+                <i class="fa-brands fa-square-instagram fa-xl" style="margin: 5px;"></i> 
+                <i class="fa-brands fa-github fa-xl" style="margin: 5px;"></i>
+            </div>
+          </div>
+          <div class="card" style="width: 10rem; margin-top: 120px; margin-left: 70px; margin-bottom: 50px;">
+            <img src="https://img.freepik.com/premium-vector/flat-3d-isometric-software-developer-programmer-coding-pc-computer-programming-web-design-concept_47328-1717.jpg?size=626&ext=jpg&ga=GA1.2.2038632464.1686319279&semt=ais" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Bhanu</p>
+              <i class="fa-brands fa-linkedin fa-xl" style="margin: 5px;"></i>
+                <i class="fa-brands fa-square-instagram fa-xl" style="margin: 5px;"></i> 
+                <i class="fa-brands fa-github fa-xl" style="margin: 5px;"></i>
+            </div>
+          </div>
+          <div class="card" style="width: 10rem; margin-top: 120px; margin-left: 70px; margin-bottom: 50px;">
+            <img src="https://img.freepik.com/free-vector/flat-call-center-concept-background_23-2148185271.jpg?size=626&ext=jpg&ga=GA1.1.2038632464.1686319279&semt=ais" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Sailaja</p>
+              <i class="fa-brands fa-linkedin fa-xl" style="margin: 5px;"></i>
+                <i class="fa-brands fa-square-instagram fa-xl" style="margin: 5px;"></i> 
+                <i class="fa-brands fa-github fa-xl" style="margin: 5px;"></i>
+            </div>
+          </div>
+      </section>
+      <footer class="footer">
+        <div class="containerss">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>We made this Scholarship Eligibility Portal to save the valuable time of the students who are indeed of the scholarships.This portal will includes all types of scholarships in one whole website.</p>
+                </div>
+                    <div class="footer-col">
+                        <h4>Follow Us </h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</li></a>
+                            <li><a href="#">Help</li></a>
+                            <li><a href="#">Terms and Conditions</li></a>
+                            <li><a href="#">FAQ</li></a>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+                        <p>123 Duvvada Visakhapatnam,pin-530046,Andhra Pradesh</p>
+                        <a href="#"><i class="fa-solid fa-phone"></i></a>
+                        <p>+91 83743 39100</p>
+                        <p>+91 78426 10943</p>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        <p>rashidshaik354@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
